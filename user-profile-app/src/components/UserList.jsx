@@ -62,7 +62,11 @@ const UserList = () => {
   };
 
   if (loading) {
-    return <Spin size="large" className="loading-spinner" />;
+    return (
+      <div style={{ textAlign: "center", marginTop: "100px" }}>
+        <Spin size="large" className="loading-spinner" />
+      </div>
+    );
   }
 
   if (error) {

@@ -18,7 +18,7 @@ const EditModal = ({ visible, onCancel, onSubmit, initialValues }) => {
     >
       <Form
         form={form}
-        layout="vertical"
+        layout="horizontal"
         onFinish={handleSubmit}
         initialValues={initialValues}
       >
