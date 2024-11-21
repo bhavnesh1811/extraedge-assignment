@@ -15,12 +15,15 @@ const EditModal = ({ visible, onCancel, onSubmit, initialValues }) => {
       open={visible}
       onCancel={onCancel}
       onOk={() => form.submit()}
+      width={400}
     >
       <Form
         form={form}
         layout="horizontal"
         onFinish={handleSubmit}
         initialValues={initialValues}
+        labelCol={{ span: 6 }} // Align labels
+        wrapperCol={{ span: 18 }} // Align input fields
       >
         <Form.Item
           name="name"
