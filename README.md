@@ -37,25 +37,22 @@ src/
 │
 ├── App.js                    # Main App component
 └── index.js                  # Entry point of the app
-
+```
 
 ## Installation
 
 1. Clone the repository:
-
     ```bash
     git clone https://github.com/bhavnesh1811/extraedge-assignment.git
     cd user-profile-app
     ```
 
 2. Install dependencies:
-
     ```bash
     npm install
     ```
 
 3. Start the development server:
-
     ```bash
     npm start
     ```
@@ -73,13 +70,21 @@ Once the app is running, you can:
 
 ## Screenshots
 
-1. **User List View**
+1. **User List View Desktop**
 
-    ![User List View](path-to-user-list-view-screenshot)
+    ![User List View Destop](https://github.com/user-attachments/assets/298369c4-4835-42e3-a672-278ac4ef8a0b)
 
-2. **Edit Modal**
+2. **User List View Tablet**
+   
+    ![User List View Tablet](https://github.com/user-attachments/assets/b7db854b-8376-4948-8412-be13e7ddc046)
 
-    ![Edit Modal](path-to-edit-modal-screenshot)
+3. **User List View Mobile**
+   
+    ![User List View Mobile](https://github.com/user-attachments/assets/4c3d16d8-64f8-4f37-8017-f14442517168)
+
+4. **Edit Modal**
+
+    ![Edit Modal](https://github.com/user-attachments/assets/d27e9c49-7487-448c-9f66-251f536ed1fe)
 
 ## API
 
