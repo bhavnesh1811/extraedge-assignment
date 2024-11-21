@@ -1,6 +1,6 @@
-# User Management App
+# User Profile App
 
-This is a simple User Management App built with **React**, **Redux**, and **Ant Design**, allowing users to view, edit, delete, and like user profiles. The app fetches user data from an API and displays it in a card layout, offering interactive features such as liking users and editing user information via a modal.
+This is a simple User Profile App built with **React**, **Redux**, and **Ant Design**, allowing users to view, edit, delete, and like user profiles. The app fetches user data from an API and displays it in a card layout, offering interactive features such as liking users and editing user information via a modal.
 
 ## Features
 
@@ -20,19 +20,23 @@ This is a simple User Management App built with **React**, **Redux**, and **Ant 
 
 ## Project Structure
 
+```bash
 src/
 ├── components/
-    └── UserList.js # Main component to display user cards
+│   └── UserList.js           # Main component to display user cards
+│
 ├── modal/
-    └── EditModal.js # Modal for editing user details │
-├── redux/ 
-    ├── user/
-    └── user.action.js # Redux actions for fetching, updating and deleting users
-    └── user.reducer.js # Redux reducer for handling user states
-    └── user.actionTypes.js # Redux action types
-    ├── store.js # Redux store configuration
-├── App.js # Main App component 
-└── index.js # Entry point of the app
+│   └── EditModal.js          # Modal for editing user details
+│
+├── redux/
+│   ├── user/
+│   │   ├── user.action.js     # Redux actions for fetching, updating, and deleting users
+│   │   ├── user.reducer.js    # Redux reducer for handling user states
+│   │   └── user.actionTypes.js # Redux action types
+│   └── store.js              # Redux store configuration
+│
+├── App.js                    # Main App component
+└── index.js                  # Entry point of the app
 
 
 ## Installation
