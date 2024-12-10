@@ -13,11 +13,11 @@ const SearchBar = () => {
    if (timeoutRef.current) clearTimeout(timeoutRef.current);
    timeoutRef.current = setTimeout(() => {
      dispatch(searchUsers(value));
-   }, 2000);
+   }, 1000);
  }, [dispatch]);
 
  return (
-   <div style={{ maxWidth: '900px', width: '90%', margin: '20px auto' }}>
+   <div>
      <Search
        placeholder="Search users by name..."
        allowClear

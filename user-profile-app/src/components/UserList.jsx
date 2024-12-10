@@ -61,14 +61,9 @@ const UserList = () => {
     setCurrentUser(null);
   };
 
-
   return (
     <>
-      
-      <div
-        className="user-list-container"
-        style={{ padding: "16px", overflow: "hidden" }}
-      >
+      <div>
         <Row gutter={[16, 16]} className="user-list">
           {displayUsers.map((user) => (
             <Col
