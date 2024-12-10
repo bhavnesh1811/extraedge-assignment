@@ -4,6 +4,9 @@ import {
   FETCH_USERS_FAILURE,
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
+  RESET_SORT,
+  SEARCH_USERS,
+  SORT_USERS,
   UPDATE_USER,
 } from "./user.actionTypes";
 
@@ -19,6 +22,25 @@ export const fetchUsersSuccess = (users) => ({
 export const fetchUsersFailure = (error) => ({
   type: FETCH_USERS_FAILURE,
   payload: error,
+});
+
+//Search Users
+
+export const searchUsers = (searchTerm) => ({
+  type: SEARCH_USERS,
+  payload: searchTerm
+});
+
+// Sort by company/email
+
+export const sortUsers = (sortBy) => ({
+  type: SORT_USERS,
+  payload: sortBy
+});
+
+// Reset Sorting
+export const resetSort = () => ({
+  type: RESET_SORT
 });
 
 // Async Action Creator

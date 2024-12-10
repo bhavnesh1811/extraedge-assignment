@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Card, Row, Col, Typography, Space, Spin, Alert, Tooltip } from "antd";
+import { Card, Row, Col, Typography, Space, Tooltip } from "antd";
 import {
   MailOutlined,
   PhoneOutlined,
@@ -12,21 +12,21 @@ import {
   EditOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-import { deleteUser, fetchUsers, updateUser } from "../redux/user/user.action";
+import { deleteUser, updateUser } from "../redux/user/user.action";
 import EditModal from "../modal/EditModal";
 
 const { Text } = Typography;
 
 const UserList = () => {
   const dispatch = useDispatch();
-  const { users, loading, error } = useSelector((state) => state.users);
+  const { users, filteredUsers, searchTerm } = useSelector(
+    (state) => state.users
+  );
+  const displayUsers = searchTerm ? filteredUsers : users;
+
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [likedUsers, setLikedUsers] = useState([]);
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
 
   const handleLikeToggle = (userId) => {
     setLikedUsers((prevLikedUsers) =>
@@ -61,26 +61,16 @@ const UserList = () => {
     setCurrentUser(null);
   };
 
-  if (loading) {
-    return (
-      <div style={{ textAlign: "center", marginTop: "100px" }}>
-        <Spin size="large" className="loading-spinner" />
-      </div>
-    );
-  }
-
-  if (error) {
-    return <Alert message="Error" description={error} type="error" />;
-  }
 
   return (
     <>
+      
       <div
         className="user-list-container"
         style={{ padding: "16px", overflow: "hidden" }}
       >
         <Row gutter={[16, 16]} className="user-list">
-          {users.map((user) => (
+          {displayUsers.map((user) => (
             <Col
               key={user.id}
               xs={24}
