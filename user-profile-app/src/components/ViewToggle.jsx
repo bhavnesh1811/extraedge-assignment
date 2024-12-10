@@ -50,19 +50,6 @@ const ViewToggle = () => {
     },
   ];
 
-  if (!users.length) {
-    return (
-      <Empty
-        image={Empty.PRESENTED_IMAGE_SIMPLE}
-        description={
-          <span style={{ fontSize: '16px', color: '#666' }}>
-            No users found
-          </span>
-        }
-      />
-    );
-  }
-
   if (loading) {
     return (
       <div style={{ textAlign: "center", marginTop: "100px" }}>
@@ -96,6 +83,15 @@ const ViewToggle = () => {
 
       {isTableView ? (
         <Table dataSource={displayUsers} columns={columns} rowKey="id" />
+      ) : !users.length || !displayUsers.length ? (
+        <Empty
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+          description={
+            <span style={{ fontSize: "16px", color: "#666" }}>
+              No users found
+            </span>
+          }
+        />
       ) : (
         <UserList />
       )}
